@@ -14,6 +14,7 @@ import javax.inject.Named;
 import br.com.alura.livraria.modelo.Autor;
 import br.com.alura.livraria.modelo.Livro;
 import br.com.lucaslib.dao.DAO;
+import br.com.lucaslib.dao.tx.annotation.Transacional;
 
 @Named
 @ViewScoped
@@ -75,6 +76,7 @@ public class LivroBean implements Serializable {
 		System.out.println("Escrito por: " + autor.getNome());
 	}
 
+	@Transacional
 	public void gravar() {
 		System.out.println("Gravando livro " + this.livro.getTitulo());
 
@@ -95,6 +97,7 @@ public class LivroBean implements Serializable {
 		this.livro = new Livro();
 	}
 
+	@Transacional
 	public void remover(Livro livro) {
 		System.out.println("Removendo livro");
 		DAO<Livro> dao = livroDao;
