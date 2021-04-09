@@ -7,4 +7,8 @@
 	<interceptors>
 		<class>br.com.lucaslib.dao.tx.annotation.GerenciadorTransacao</class>
 	</interceptors>
+	
+<!-- 	<alternatives> -->
+<!-- 		<class>br.com.alura.livraria.tx.MeuGerenciadorDeTransacao</class> -->
+<!-- 	</alternatives> -->
 </beans>
