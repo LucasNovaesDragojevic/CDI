@@ -6,8 +6,8 @@
 
 
 	<lifecycle>
-		<phase-listener>br.com.alura.livraria.util.Autorizador</phase-listener>
-		<phase-listener>br.com.alura.livraria.util.LogPhaseListener</phase-listener>
+<!-- 		<phase-listener>br.com.alura.livraria.util.Autorizador</phase-listener> -->
+		<phase-listener>br.com.lucaslib.jsf.phaseListener.PhaseListenerGenerico</phase-listener>
 	</lifecycle>
 
 </faces-config>

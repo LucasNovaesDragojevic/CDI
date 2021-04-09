@@ -4,6 +4,7 @@ import java.util.Map;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Produces;
+import javax.faces.application.NavigationHandler;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.context.Flash;
@@ -41,6 +42,12 @@ public class JSFFactory {
 	@ScopeMap(Scope.APPLICATION)
 	public Map<String, Object> applicationMap(){
 		return getExternalContext().getApplicationMap();
+	}
+	
+	@Produces
+	@RequestScoped
+	public NavigationHandler getNavigationHandler() {
+		return getFacesContext().getApplication().getNavigationHandler();
 	}
 
 	private ExternalContext getExternalContext() {
