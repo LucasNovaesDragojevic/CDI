@@ -15,10 +15,10 @@ public class DAOFactory {
 	private EntityManager em;
 
 	@Produces
-	public <T> DAO<T> factory(InjectionPoint point) {
+	public <T, I> DAO<T, I> factory(InjectionPoint point) {
 		ParameterizedType type = (ParameterizedType) point.getType();
 		@SuppressWarnings("unchecked")
 		Class<T> classe = (Class<T>) type.getActualTypeArguments()[0];
-		return new DAO<T>(classe, em);
+		return new DAO<T, I>(classe, em);
 	}
 }

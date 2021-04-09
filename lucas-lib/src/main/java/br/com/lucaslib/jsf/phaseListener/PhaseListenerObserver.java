@@ -2,6 +2,7 @@ package br.com.lucaslib.jsf.phaseListener;
 
 import java.lang.annotation.Annotation;
 
+import javax.enterprise.inject.Vetoed;
 import javax.enterprise.inject.spi.BeanManager;
 import javax.enterprise.inject.spi.CDI;
 import javax.enterprise.util.AnnotationLiteral;
@@ -10,6 +11,7 @@ import javax.faces.event.PhaseEvent;
 import br.com.lucaslib.jsf.phaseListener.annotation.After;
 import br.com.lucaslib.jsf.phaseListener.annotation.Before;
 
+@Vetoed
 public class PhaseListenerObserver {
 	
 	private BeanManager observer = CDI.current().getBeanManager();
